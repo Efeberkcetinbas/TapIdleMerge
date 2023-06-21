@@ -28,6 +28,7 @@ public class CubeTrigger : MonoBehaviour
                 Debug.Log("HIT : " + cubeProperties.Number);
                 gameData.tempRandomNumber=gameData.RandomNumber;
                 EventManager.Broadcast(GameEvent.OnMergeNumbers);
+                EventManager.Broadcast(GameEvent.OnIncreaseScore);
                 Destroy(cubeProperties.gameObject);
                 Destroy(otherCube.gameObject);
                 gameManager.CubeNumbers.Add(gameData.tempRandomNumber);

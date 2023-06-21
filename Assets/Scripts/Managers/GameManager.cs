@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     
 
-    /*private void OnEnable()
+    private void OnEnable()
     {
         EventManager.AddHandler(GameEvent.OnIncreaseScore, OnIncreaseScore);
     }
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         EventManager.RemoveHandler(GameEvent.OnIncreaseScore, OnIncreaseScore);
-    }*/
+    }
     
     void OnGameOver()
     {
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     void OnIncreaseScore()
     {
         //gameData.score += 50;
-        DOTween.To(GetScore,ChangeScore,gameData.score+gameData.increaseScore,1f).OnUpdate(UpdateUI);
+        DOTween.To(GetScore,ChangeScore,gameData.score+gameData.increaseScore,0.3f).OnUpdate(UpdateUI);
     }
 
     private int GetScore()

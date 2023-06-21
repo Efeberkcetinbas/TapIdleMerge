@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using DG.Tweening;
 
 public class CreateCube : MonoBehaviour
 {
     [SerializeField] private CubeProperties cube;
 
     [SerializeField] private Transform spawnPos;
+    [SerializeField] private Transform mergePos;
     public GameData gameData;
 
     private void OnEnable() 
@@ -44,11 +45,15 @@ public class CreateCube : MonoBehaviour
 
     private void OnMergeNumbers()
     {
-        CubeProperties cloneCube=Instantiate(cube,spawnPos.localPosition,Quaternion.identity);
-        cloneCube.Number=gameData.tempRandomNumber+1;
-        for (int i = 0; i < cloneCube.NumberTexts.Length; i++)
-        {
-            cloneCube.NumberTexts[i].SetText((gameData.tempRandomNumber+1).ToString());
-        }
+        CubeProperties cloneCube=Instantiate(cube,mergePos.localPosition,Quaternion.identity);
+        cloneCube.transform.DOMoveY(spawnPos.position.y,0.2f).OnComplete(()=>{
+            cloneCube.Number=gameData.tempRandomNumber+1;
+            cloneCube.transform.DOScale(Vector3.one*3,0.1f).OnComplete(()=>cloneCube.transform.DOScale(Vector3.one*2,0.1f));
+            for (int i = 0; i < cloneCube.NumberTexts.Length; i++)
+            {
+                cloneCube.NumberTexts[i].SetText((gameData.tempRandomNumber+1).ToString());
+            }
+        });
+        
     }
 }
