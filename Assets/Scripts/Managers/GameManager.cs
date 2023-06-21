@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameData gameData;
     public PlayerData playerData;
+    public CubeData cubeData;
 
     [SerializeField] private GameObject FailPanel;
     [SerializeField] private Ease ease;
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         EventManager.AddHandler(GameEvent.OnIncreaseScore, OnIncreaseScore);
     }
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         EventManager.RemoveHandler(GameEvent.OnIncreaseScore, OnIncreaseScore);
-    }
+    }*/
     
     void OnGameOver()
     {
@@ -68,7 +69,8 @@ public class GameManager : MonoBehaviour
     
     void ClearData()
     {
-
+        cubeData.CubeId=0;
+        gameData.RandomNumber=1;
     }
 
     

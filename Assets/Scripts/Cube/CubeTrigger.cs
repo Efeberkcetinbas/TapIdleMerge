@@ -6,6 +6,8 @@ public class CubeTrigger : MonoBehaviour
 {
     private CubeProperties cubeProperties;
 
+    public GameData gameData;
+
     private void Awake() 
     {
         cubeProperties=GetComponent<CubeProperties>();
@@ -21,6 +23,15 @@ public class CubeTrigger : MonoBehaviour
             if(cubeProperties.Number==otherCube.Number)
             {
                 Debug.Log("HIT : " + cubeProperties.Number);
+                gameData.tempRandomNumber=gameData.RandomNumber;
+                EventManager.Broadcast(GameEvent.OnMergeNumbers);
+                Destroy(cubeProperties.gameObject);
+                Destroy(otherCube.gameObject);
+            }
+
+            else
+            {
+                Debug.Log("FAIL");
             }
         }
         

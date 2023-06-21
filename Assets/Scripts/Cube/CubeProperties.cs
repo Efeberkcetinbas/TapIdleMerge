@@ -8,15 +8,17 @@ public class CubeProperties : MonoBehaviour
 
     public int Number;
 
-    public int staticId=0;
 
     internal int CubeID;
 
     internal bool IsMainCube;
 
+    public CubeData cubeData;
+
     private void Awake() 
     {
-        CubeID=staticId++;
+        cubeData.CubeId++;
+        CubeID=cubeData.CubeId;
     }
 
 

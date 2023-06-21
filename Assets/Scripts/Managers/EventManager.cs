@@ -8,6 +8,7 @@ public enum GameEvent
     OnTargetHit,
     OnPressedScreen,
     OnRandomNumber,
+    OnMergeNumbers,
 
 
     //Game Management

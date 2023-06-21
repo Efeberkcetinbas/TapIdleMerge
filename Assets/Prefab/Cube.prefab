@@ -118,6 +118,7 @@ MonoBehaviour:
   - {fileID: 7070109445766884478}
   - {fileID: 7070109444378245545}
   Number: 1
+  cubeData: {fileID: 11400000, guid: d9952093b0d35d54daec6f712642993a, type: 2}
 --- !u!114 &7000298081229393803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8c4a8b09fa9084fbe73797927fa7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 9a3cdd40fb3ed934c97f13c4b1ce9ddf, type: 2}
 --- !u!54 &1251979362
 Rigidbody:
   m_ObjectHideFlags: 0
