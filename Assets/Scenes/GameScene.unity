@@ -288,7 +288,7 @@ MonoBehaviour:
   FailPanel: {fileID: 0}
   ease: 0
   InitialDifficultyValue: 0
-  CubeNumbers: 010000000200000003000000040000000500000006000000
+  CubeNumbers: 01000000
 --- !u!1 &293794931
 GameObject:
   m_ObjectHideFlags: 0

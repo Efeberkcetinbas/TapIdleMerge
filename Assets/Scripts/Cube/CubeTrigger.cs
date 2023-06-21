@@ -8,9 +8,12 @@ public class CubeTrigger : MonoBehaviour
 
     public GameData gameData;
 
+    private GameManager gameManager;
+
     private void Awake() 
     {
         cubeProperties=GetComponent<CubeProperties>();
+        gameManager=FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -27,6 +30,7 @@ public class CubeTrigger : MonoBehaviour
                 EventManager.Broadcast(GameEvent.OnMergeNumbers);
                 Destroy(cubeProperties.gameObject);
                 Destroy(otherCube.gameObject);
+                gameManager.CubeNumbers.Add(gameData.tempRandomNumber);
             }
 
             else

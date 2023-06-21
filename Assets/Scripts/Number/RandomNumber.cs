@@ -11,6 +11,8 @@ public class RandomNumber : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     public GameData gameData;
+
+    //Update'e cek
     private void Start() 
     {
         InvokeRepeating("GetRandomNumber",1,1);
