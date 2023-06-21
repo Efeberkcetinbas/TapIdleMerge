@@ -6,6 +6,7 @@ public enum GameEvent
 {
     //Player
     OnTargetHit,
+    OnPressedScreen,
 
 
     //Game Management
