@@ -10,5 +10,7 @@ public class GameData : ScriptableObject
     public int score;
     public int increaseScore;
 
+    public int RandomNumber;
+
     public bool isGameEnd=false;
 }

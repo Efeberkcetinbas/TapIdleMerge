@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public float InitialDifficultyValue;
 
+    public List<int> CubeNumbers=new List<int>();
 
     private void Awake() 
     {
